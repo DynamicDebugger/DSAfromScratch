@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import insertionSort.InsertionSortAlgorithm;
+
 public class Main {
     
 	//LEETCODE 268
@@ -117,12 +119,33 @@ public class Main {
     	return duplicates;
     }
     
-    
+    //LEETCODE 41. First Missing Positive
+    public static int firstMissingPositive(int[] arr) {
+    	
+    	int n = arr.length;
+    	InsertionSortAlgorithm.sort(arr, n);
+    	int i = 1;
+    	for( ; i <= arr[n - 1] ; i++) {
+    		
+    		if(!contains(arr,i)) {
+    			return i;
+    		}
+    	}
+    	return i;
+    }
+	static boolean contains(int[] arr, int k) {
+		// TODO Auto-generated method stub
+		for(int i: arr) {
+			if(i == k) return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {1};
+		int[] arr = {7,8,9,11,12};
 		
-		System.out.println(findDuplicates(arr));	
+		System.out.println("Missing number:"+firstMissingPositive(arr));	
 	}
 
 }

@@ -77,8 +77,8 @@ public class SearchInRotatedArray {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {3,4,5,6,7,0,1,2};
-		int target = 2;
+		int[] arr = {3,1};
+		int target = 1;
 		
 		System.out.println(search(arr,target));
 		

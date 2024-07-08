@@ -6,9 +6,11 @@ public class CyclicSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = {2,4,3,2,5};
-		sort(arr);
-		System.out.println(Arrays.toString(arr));		
+		int[] arr = {3,2,1,5};
+//		sort(arr);
+//		System.out.println(Arrays.toString(arr));
+		CyclicSort csrt = new CyclicSort();
+		System.out.println(csrt.missingNumber(arr, 5));
 	}
 	static void sort(int[] arr) {
 		
@@ -30,6 +32,25 @@ public class CyclicSort {
 	    arr[i] = arr[j];
 	    arr[j] = temp;
 	}
+    int missingNumber(int arr[], int n) {
+        int i = 0;
+        while (i < arr.length) {
+            int crt = arr[i] - 1;
+            if (arr[i] != arr[crt]) {
+                swap(arr, i, crt);
+            } else {
+                i++;
+            }
+        }
+        
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] != i + 1) {
+                return arr[i];
+            }
+        }
+        
+        return -1;
+    }
 }
 
 /**

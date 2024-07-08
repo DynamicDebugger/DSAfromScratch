@@ -29,7 +29,7 @@ public class InsertionSortAlgorithm {
         return tot;
     }
     
-	static void sort(int[] arr, int n) {
+	public static void sort(int[] arr, int n) {
 		// TODO Auto-generated method stub
 		//sort by parts
 		

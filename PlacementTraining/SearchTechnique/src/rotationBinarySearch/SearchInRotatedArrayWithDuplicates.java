@@ -89,13 +89,23 @@ public class SearchInRotatedArrayWithDuplicates {
 		return false;
 	}
 	
-	
+    public static int findMin(int[] nums) {
+        
+        int pivot = findPivotWithDuplicate(nums);
+
+        if(pivot == -1){
+            return (nums[0] < nums[nums.length - 1]) ? nums[0] : nums[nums.length - 1];
+        }else{
+            return nums[pivot+1];
+        }
+    }	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] arr = {2,9,2,2,2};
+		int[] arr = {1,3,5};
 		int target = 9;
-		System.out.println(search(arr, target));
+		//System.out.println(search(arr, target));
+		System.out.println(findMin(arr));
 		
 	}
 
