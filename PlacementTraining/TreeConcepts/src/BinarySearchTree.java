@@ -103,15 +103,16 @@ public class BinarySearchTree {
     //In-order LNR
     public void inOrder(Node root){
         if(root == null)  return;
-        preOrder(root.left);
+        inOrder(root.left);
         System.out.print(root.val+ " ");
-        preOrder(root.right);
+        inOrder(root.right);
     }
     //Post-order LRN
     public void postOrder(Node root){
         if(root == null)  return;
-        preOrder(root.left);
-        preOrder(root.right);
+        postOrder(root.left);
+        postOrder(root.right);
         System.out.print(root.val+ " ");
     }
 }
+
